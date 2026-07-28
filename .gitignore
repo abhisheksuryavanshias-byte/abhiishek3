@@ -1,0 +1,26 @@
+
+# Python (Django)
+backend/env/
+backend/__pycache__/
+*.py[cod]
+
+# SQLite Database
+backend/Ecom/db.sqlite3
+
+
+# React (Vite)
+frontend/node_modules/
+frontend/dist/
+
+
+# Environment Variables
+.env
+*.env
+
+
+# VS Code
+.vscode/
+
+# OS Files
+.DS_Store
+Thumbs.db
