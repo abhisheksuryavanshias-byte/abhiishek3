@@ -133,3 +133,6 @@ CORS_ALLOW_METHODS = (
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
 ]
+
+MEDIA_URL="/Media/"
+MEDIA__ROOT=BASE_DIR/"Media"

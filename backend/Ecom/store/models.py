@@ -3,20 +3,20 @@ from django.contrib.auth.models import User
 
 
 # Create your models here.
-class category(models.Model):
+class Category(models.Model):
    name=models.CharField(max_length=100,unique=True)
-   slug=models.CharField(max_length=100,unique=True)
+   slug=models.SlugField(max_length=100,unique=True)
 
 
    def __str__(self):
         return self.name
 
 class Product(models.Model):
-    category=models.ForeignKey(category,related_name="product",on_delete=models.CASCADE)
+    category=models.ForeignKey(Category,related_name="product",on_delete=models.CASCADE)
     name=models.CharField(max_length=200)
     description=models.TextField(blank=True)
     price=models.DecimalField(max_digits=10,decimal_places=2)
-    image=models.URLField(blank=True)
+    image=models.ImageField(blank=True,upload_to="product/",null=True,)
     created_at=models.DateField(auto_now_add=True)
 
     def __str__(self):
@@ -31,7 +31,7 @@ class UserProfile(models.Model):
         return self.user.username
 
 class Order(models.Model):
-    user=models.ForeignKey(User,on_delete=models.Cascade)
+    user=models.ForeignKey(User,on_delete=models.CASCADE)
     created_at=models.DateField(auto_now_add=True)
     total_amout=models.DecimalField(max_digits=10,decimal_places=2)
 
