@@ -3,13 +3,13 @@ import { useState,useEffect } from "react";
 
 
 function App(){
-  const[message,Setmessage] = useState("");
+  const[product,Setproduct] = useState("abhishek");
 
   useEffect(()=>{
 
-    fetch(" http://127.0.0.1:8000/")
+    fetch("http://127.0.0.1:8000/api/product/")
     .then(response=> response.json())
-    .then(data => Setmessage(data.data))
+    .then(data => Setproduct(data))
     .catch((error)=>{console.error("Error:",error);
 
     });
@@ -19,8 +19,8 @@ function App(){
 
   return (
   <>
-  <h1>message from backend</h1>
-  <p>{message || "loading...."}</p>
+<h1>product list</h1>
+<p>{product}</p>
   
   </>
   )

@@ -3,6 +3,7 @@
 backend/env/
 backend/__pycache__/
 *.py[cod]
+backend/media
 
 # SQLite Database
 backend/Ecom/db.sqlite3
